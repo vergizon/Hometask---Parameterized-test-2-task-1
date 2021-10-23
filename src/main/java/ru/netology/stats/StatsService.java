@@ -42,9 +42,10 @@ public class StatsService {
 
     public int findMonthsUnderAverage(int[] sales) {
         int monthCounterUnderAve = 0;
+        double Average = calculateSum(sales) / sales.length;
 
         for (int sale : sales) {
-            if (sale < (calculateSum(sales) / sales.length)) {
+            if (sale < Average) {
                 monthCounterUnderAve++;
             }
         }
@@ -53,9 +54,10 @@ public class StatsService {
 
     public int findMonthsOverAverage(int[] sales) {
         int monthCounterOverAve = 0;
+        double Average = calculateSum(sales) / sales.length;
 
         for (int sale : sales) {
-            if (sale > (calculateSum(sales) / sales.length)) {
+            if (sale > Average) {
                 monthCounterOverAve++;
             }
         }
